@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-22.04
     strategy:
       matrix:
-        node-version: ['18.x', '20.x']
+        node-version: ['18.x']
     permissions:
       contents: write
     concurrency:
@@ -37,4 +37,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           personal_token: ${{ secrets.ACCESS_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ./build
