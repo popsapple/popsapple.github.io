@@ -1,26 +1,41 @@
 name: Deploy to GitHub Pages
+
 on:
   push:
     branches:
-      - gh-pages
+      - gh-pages  # Set a branch name to trigger deployment
+  pull_request:
+  
+strategy:
+  matrix:
+    node-version: ['18.x', '20.x']
+
 jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
+  deploy:
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-      with: 
-        token : ${{ secrets.ACCESS_TOKEN }}
+      - uses: actions/checkout@v4
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
-    - name: Install dependencies
-      run: npm install
-      
-    - name: Run build
-      run: npm run build
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
 
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v4
-      with: 
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        # personal_token: ${{ secrets.ACCESS_TOKEN }}
-        publish_dir: ./build
+      - name: Install dependencies
+        run: npm install
+        
+      - name: Run build
+        run: npm run build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
