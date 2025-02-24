@@ -10,7 +10,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
       with: 
-        token: ${{ secrets.ACCESS_TOKEN }}
+        personal_token : ${{ secrets.ACCESS_TOKEN }}
 
     - name: Install dependencies
       run: npm install
