@@ -9,7 +9,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://popsapple.github.io/",
+  "homepage": "https://popsapple.github.io/popsapple",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/popsapple/popsapple.github.io.git"
