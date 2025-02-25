@@ -9,6 +9,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
+  "homepage": "https://popsapple.github.io/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/popsapple/popsapple.github.io.git"
@@ -18,7 +19,6 @@
   "bugs": {
     "url": "https://github.com/popsapple/popsapple.github.io/issues"
   },
-  "homepage": "https://github.com/popsapple/popsapple.github.io#readme",
   "dependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
