@@ -38,6 +38,5 @@ jobs:
         if: github.ref == 'refs/heads/main'
         with:
           personal_token: ${{ secrets.ACCESS_TOKEN }}
-          github_token: ${{ secrets.ACCESS_TOKEN }}  # default: gh-pages
-          publish_branch: gh-pages # default: gh-pages
           publish_dir: ./build
+          keep_files: false
