@@ -10,7 +10,6 @@
       "scripthost",
       "es6"
     ] /* 컴파일 과정에 사용될 라이브러리 파일 설정 */,
-    "allowJs": true /* JavaScript 파일 컴파일 허용 */,
     "checkJs": true /* .js 파일 오류 리포트 설정 */,
     "jsx": "react" /* 생성될 JSX 코드 설정: 'preserve', 'react-native', or 'react'. */,
     "declaration": true /* '.d.ts' 파일 생성 설정 */,
@@ -32,7 +31,9 @@
     "baseUrl": "./" /* 절대 경로 모듈이 아닌, 모듈이 기본적으로 위치한 디렉토리 설정 (예: './modules-name') */,
     "paths": { /* baseUrl 기반으로 import 할 모듈들의 별명을 지정 */
       "@utils/*": ["./src/utils/*"],
-      "@components/*": ["./src/components/*"]
+      "@pages/*": ["./src/pages/*"],
+      "@components/*": ["./src/components/*"],
+      "@styles/*": ["./src/styles/*"]
     },
     "rootDirs": ["src"] /* 이 안애 있는 경로들은 root 로 인식되어서 하위 컴포넌트에들에서 경로를 동일하게 공유하는걸로 판단 */,
     "typeRoots" : ["./node_modules/@types", "./types"] /* 유형 정의를 포함할 디렉토리 목록 */,
@@ -49,6 +50,6 @@
     "experimentalDecorators": true /* ES7 데코레이터(decorators) 실험 기능 지원 설정 */,
     "emitDecoratorMetadata": true /* 데코레이터를 위한 유형 메타데이터 방출 실험 기능 지원 설정 */,
   },
-  "include": ["src/**/*.tsx","src/**/*.ts"],
+  "include": ["src/**/*.tsx","src/**/*.ts","types/**/*.d.ts"],
   "exclude": ["node_modules"]
 }

@@ -1,0 +1,43 @@
+@mixin logobutton($icon) {
+    > .img {
+        &:after {
+            background: url($icon);
+        }
+    }
+}
+.button {
+    position: relative;
+    display: block;
+    background: transparent;
+    border: 0px;
+    span {
+        color: red
+    }
+    > .text {
+        position: absolute;
+        left: 0px;
+        top: -20px;
+        font-size: 10px;
+    }
+    > .img {
+        position: relative;
+        overflow: visible;
+        width: 122px;
+        height: 116px;
+        &:after {
+            position: absolute;
+            display: block;
+            top: 0px;
+            left: 0px;
+            width: 122px;
+            height: 116px;
+            content: ' ';
+        }
+    }
+}
+.REACT {
+    @include logobutton('../assets/images/react_icon.png');
+}
+.JS {
+    @include logobutton('../assets/images/js_icon.png');
+}
