@@ -23,9 +23,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          
-      - name: Uninstall dependencies
-        run: npm uninstall
 
       - name: Install dependencies
         run: npm install
