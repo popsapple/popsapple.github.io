@@ -30,7 +30,7 @@ module.exports= {
               exclude: /node_modules/
           },
           {
-              test: /\.module?\.s[ac]ss$/i,
+              test: /(\.module?\.s[ac]ss)|\.css$/i,
               use: ['style-loader', 
                 {
                   loader: 'css-loader',
@@ -49,21 +49,15 @@ module.exports= {
           },
           {
             test: /\.(svg|png|jpg|ttf|woff)$/,
-            use: [
-              {
-                loader: 'file-loader',
-                options: {
-                  name: '[name].[hash].[ext]',  // 파일 이름과 해시값을 포함한 이름으로 파일을 저장
-                  outputPath: '/',  // 빌드 디렉토리 내 assets 폴더로 저장
-                  publicPath: '/assets/',  // publicPath 설정 (웹에서 이 경로를 통해 접근)
-                },
-              }
-            ],
+            type: 'asset/resource', // 'file-loader'를 대체
+            generator: {
+              filename: '[name][ext]', // 해시 없이 원래 이름 그대로 사용
+            },
           },
         ]
     },
     devServer: {
-      port: 9000
+      port: 9000,
     },
     plugins: [
       new HtmlWebpackPlugin({

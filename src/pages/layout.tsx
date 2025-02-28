@@ -1,6 +1,6 @@
 import React from 'react';
 import Background from '@components/background'
-import '@styles/layout.scss';
+import '@styles/layout.css';
 
 const Layout = (props) => {
     return <>

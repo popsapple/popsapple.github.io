@@ -1,4 +1,38 @@
 .background {
     width: 100vw;
     height: 100vh;
+    background: #e5e7ed;
+    > ul {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row; /* 주측을 가로로 설정 */
+        justify-content: flex-start; /* 주측 기준 시작지점부터 정렬 */
+        align-items: stretch; /* 교차축 기준 시작지점부터 정렬, stretch 일 경우 여백없이 꽉 채우기 위해 늘려버림 */
+        justify-content: space-between; /* 주측 기준으로 아이템 사이에 빈 공간 없이 정렬 */
+        align-items: stretch; /* 교차축 기준으로 아이템을 늘려서 정렬 */
+        width: 100vw;
+        height: 100vh;
+        > li {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            width:25%;
+            /*
+            flex: 0 0 25%; flex-grow, flex-shrink, flex-basis를 한번에 설정
+            flex-grow: 0; 항목이 차지할 공간의 증가 여부
+            flex-shrink: 0; 항목이 차지할 공간의 감소 여부
+            flex-basis: 25%; 항목이 차지할 공간의 초기 크기
+            */
+            > button {
+                width: calc(122px / 2);
+                height: calc(116px / 2);
+                margin: auto;
+                /* 640 1024 */
+                @media screen and (min-width: 640px) {
+                    width: calc(122px / 1);
+                    height: calc(116px / 1);
+                }
+            }
+        }
+    }
 }

@@ -21,6 +21,7 @@
     "url": "https://github.com/popsapple/popsapple.github.io/issues"
   },
   "dependencies": {
+    "hangul-js": "^0.2.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "webpack-dev-server": "^5.2.0",
