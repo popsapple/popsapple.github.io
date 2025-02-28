@@ -23,13 +23,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-
-      - name: Install dependencies
-        run: npm install
-        
-      - name: Run build
-        run: npm run build
-
+          
       - name: Deploy Pages
         if: github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v4
