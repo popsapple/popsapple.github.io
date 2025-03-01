@@ -1,11 +1,14 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import Background from '@components/background'
 import '@styles/layout.css';
+import Loading from '@utils/Loading';
 
 const Layout = (props) => {
     return <>
         <main>
+            <Suspense fallback={<Loading />}>
             <Background />
+            </Suspense>
         </main>
     </>
 }

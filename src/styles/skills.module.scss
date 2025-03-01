@@ -18,9 +18,12 @@
         transform-style: preserve-3d;
         perspective: 1000px; /* 3D 효과의 깊이 설정 */
         transform: rotateY(0deg); /* 초기 상태는 앞면 */
-        transition: transform 1s .3s; /* 회전 애니메이션 */
+        transition: transform .5s .3s; /* 회전 애니메이션 */
+        &:focus {
+            transform: rotateY(180deg) scale(1.18); /* 뒷면으로 회전 */
+        }
         &:hover {
-            transform: rotateY(180deg); /* 뒷면으로 회전 */
+            transform: rotateY(180deg) scale(1.18); /* 뒷면으로 회전 */
         }
     }
 }
