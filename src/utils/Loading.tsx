@@ -80,7 +80,7 @@ class Ring {
 
 const Loading = () => {
     const canvas = React.useRef<HTMLCanvasElement>(null);
-    const bgStyle: React.CSSproperties = {
+    const bgStyle: React.CSSProperties = {
         position: 'absolute',
         top: 0,
         left: 0,
@@ -88,7 +88,7 @@ const Loading = () => {
         height: '100vh',
         backgroundColor: '#e5e7ed',
     }
-    const itemStyle: React.CSSproperties = {
+    const itemStyle: React.CSSProperties = {
         position: 'absolute',
         top: '50%',
         left: '50%',

@@ -17,7 +17,9 @@ const Items = {
 }
 const SkillButton = (props) => {
     return <button 
-            className={style[props.type] + ' ' + style.button}>
+            className={style[props.type] + ' ' + style.button}
+            onClick={()=> props.onClick(props.type)}
+        >
         <span className={style.text}>{props.type}</span>
         <span className={style.img} role='presentation'>
         <span className={style.after}></span>
