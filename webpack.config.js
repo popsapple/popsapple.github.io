@@ -1,7 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyPlugin = require("copy-webpack-plugin");
+const webpack = require("webpack");
 
 module.exports= {
     resolve: {
@@ -69,5 +68,8 @@ module.exports= {
         template: './src/index.html', // 템플릿으로 사용할 HTML 파일
         inject: true
       }),
+      new webpack.DefinePlugin({
+        'BUILD_DATE': JSON.stringify(new Date().toLocaleString())
+      })
     ],
 }
