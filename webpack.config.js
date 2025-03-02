@@ -30,7 +30,7 @@ module.exports= {
               exclude: /node_modules/
           },
           {
-              test: /(\.module?\.s[ac]ss)|\.css$/i,
+              test: /(\.module?\.s[ac]ss)$/i,
               use: ['style-loader', 
                 {
                   loader: 'css-loader',
@@ -47,6 +47,11 @@ module.exports= {
               }],
               exclude: /node_modules/
           },
+          {
+            test: /\.css$/i,
+            use: ['style-loader', 'css-loader'],
+            exclude: /node_modules/
+        },
           {
             test: /\.(svg|png|jpg|ttf|woff)$/,
             type: 'asset/resource', // 'file-loader'를 대체

@@ -3,3 +3,46 @@ html, * {
     margin: 0px;
     padding: 0px;
 }
+* {
+    cursor: none;
+}
+html .cursor {
+    background: #808080;
+    z-index: 9999;
+    border-radius: 50%;
+    top:0px;
+    left:0px;
+    pointer-events: none;
+}
+.cursor::after,
+.cursor::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #808080;
+  height: 10px;
+  width: 10px;
+  border-radius: 50px;
+  opacity: 0;
+}
+.cursor.leave {
+    opacity: 0;
+}
+.cursor::before {
+    background-color: #808080;
+  }
+  .cursor.click::before {
+    animation: click 1s ease forwards;
+  }
+  @keyframes click {
+    0% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(7);
+    }
+  }

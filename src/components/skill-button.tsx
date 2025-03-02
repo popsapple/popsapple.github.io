@@ -16,7 +16,8 @@ const Items = {
     'DOT2' : ''
 }
 const SkillButton = (props) => {
-    return <button className={style[props.type] + ' ' + style.button}>
+    return <button 
+            className={style[props.type] + ' ' + style.button}>
         <span className={style.text}>{props.type}</span>
         <span className={style.img} role='presentation'>
         <span className={style.after}></span>
