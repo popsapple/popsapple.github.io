@@ -1,1 +1,1 @@
-{"version":3,"file":"background.d.ts","sourceRoot":"./","sources":["src/components/background.tsx"],"names":[],"mappings":"AAeA,QAAA,MAAM,UAAU,qBASf,CAAA;AAED,eAAe,UAAU,CAAA"}
+{"version":3,"file":"background.d.ts","sourceRoot":"./","sources":["src/components/background.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAY,MAAM,OAAO,CAAC;AAiBjC,QAAA,MAAM,UAAU,mCAaf,CAAA;AAED,eAAe,UAAU,CAAA"}

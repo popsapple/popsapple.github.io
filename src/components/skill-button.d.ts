@@ -1,3 +1,4 @@
+import React from 'react';
 declare const Items: {
     DOT1: string;
     REACT: string;
@@ -12,6 +13,6 @@ declare const Items: {
     SVELTE: string;
     DOT2: string;
 };
-declare const SkillButton: (props: any) => any;
+declare const SkillButton: (props: any) => React.JSX.Element;
 export { SkillButton, Items };
 //# sourceMappingURL=../../../src/components/skill-button.d.ts.map
