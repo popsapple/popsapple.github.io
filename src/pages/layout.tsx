@@ -7,6 +7,7 @@ const cursor = new Cursor(0, 0, 5);
 
 const Layout = (props) => {
     return <>
+        <h1>popsapples page</h1>
         <main>
             <Suspense fallback={<Loading />}>
                 <Background />

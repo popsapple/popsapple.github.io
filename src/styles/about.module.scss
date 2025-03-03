@@ -1,0 +1,32 @@
+.about {
+    > li {
+        display: block;
+        h3 {
+          font-size: 50px;
+          margin-bottom: 35px;
+        }
+        margin-bottom: 50px;
+    }
+    .skill {
+        display: block;
+    }
+    .history {
+        display: block;
+    }
+    .profile {
+        & > * { display: block;}
+        p {
+            font-size: 20px;
+        }
+        div {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            > span, > a {
+                display: block;
+                text-align: left;
+            }
+        }
+    }
+}
