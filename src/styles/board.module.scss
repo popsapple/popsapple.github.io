@@ -1,3 +1,11 @@
+@keyframes cardup {
+    0% {
+        transform: translate(-50%, -50%) scale(0.95) rotate(-5deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    }
+}
 .section {
     position: absolute;
     z-index: 10;
@@ -10,6 +18,8 @@
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: left;
+    animation: cardup 0.05s 0s ease-in-out forwards;
+    color: #7a7a7a;
     @media screen and (min-width: 1280px){
         left: 55%;
     }
@@ -29,39 +39,37 @@
     > div {
         display: inline-block;
         width: 100%;
-        padding: 50px;
         vertical-align: top;
-        @media screen and (min-width: 1280px){
-            width: 70%;
-            padding: 50px 50px 50px 100px;
+        box-sizing: border-box;
+        &:not(.img){
+            @media screen and (min-width: 1280px){
+                width: 90%;
+            }
         }
     }
     > .img {
         display: none;
+        box-sizing: border-box;
         @media screen and (min-width: 1280px){
             position: relative;
             display: inline-block;
             width: 10%;
             height: 100%;
             vertical-align: middle;
-            font-size: 100px;
         }
-        
         img {
             position: absolute;
             left: 30%;
             top: 45%;
-            transform: translate(-50%, -50%) scale(0.6);
-            animation: scaleup 0.3s 0s ease-out forwards;
+            transform: translate(-50%, -50%) scale(0.7);
         }
-        @keyframes scaleup {
-            0% {
-                transform: translate(-50%, -50%) scale(0.6) rotate(-20deg);
-            }
-            100% {
-                transform: translate(-50%, -50%) scale(0.8) rotate(0deg);
-            }
-        }
+    }
+    h3 {
+        font-size: 40px;
+        text-transform: uppercase;
+        font-weight: 900;
+        margin-bottom: 20px;
+        color: #000000;
     }
 }
 .close {

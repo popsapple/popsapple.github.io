@@ -1,5 +1,5 @@
 import React from 'react';
-import { Items } from '@components/skill-button';
+import { Items } from '@components/icon-button';
 type BoardType = {
     type: keyof typeof Items;
     children?: React.ReactNode;

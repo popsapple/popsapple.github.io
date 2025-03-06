@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {JSX} from 'react';
 import * as style from '@styles/skills.module.scss';
 
 const Items = {
@@ -15,7 +15,16 @@ const Items = {
     'SVELTE' : '',
     'DOT2' : ''
 }
-const SkillButton = (props) => {
+type IconCategory = 'Skill' | 'Action' | 'Deco' | '';
+export type ItemKeys = keyof typeof Items;
+const IconButton = (props: {type: ItemKeys, children?: JSX.Element, onClick:(type: ItemKeys) => void}) => {
+    const [category, setCategory] = React.useState<IconCategory>('')
+    React.useEffect(() => {
+        if(props.type.indexOf('DOT') != -1) setCategory('Deco')
+        else if(props.type.indexOf('STAR') != -1) setCategory('Deco')
+        else if(props.type.indexOf('ABOUT') != -1) setCategory('Action')
+        else setCategory('Skill')
+    },[])
     return <button 
             className={style[props.type] + ' ' + style.button}
             onClick={()=> props.onClick(props.type)}
@@ -24,7 +33,8 @@ const SkillButton = (props) => {
         <span className={style.img} role='presentation'>
         <span className={style.after}></span>
         <span className={style.before}></span></span>
+        {props.children}
     </button>
 }
 
-export { SkillButton, Items }
+export { IconButton, Items }

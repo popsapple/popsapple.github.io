@@ -2,14 +2,17 @@ html, * {
     font-size: 16px;
     margin: 0px;
     padding: 0px;
-    font-family: "Noto Sans KR", serif;
+    font-family: "Noto Sans KR", "Archivo Black", sans-serif;
     box-sizing: border-box;
 }
 * {
     cursor: none;
 }
+li {
+  list-style: none;
+}
 html .cursor {
-    background: #808080;
+    background: #7a7a7a;
     z-index: 9999;
     border-radius: 50%;
     top:0px;
@@ -23,7 +26,7 @@ html .cursor {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #808080;
+  background-color: #7a7a7a;
   height: 10px;
   width: 10px;
   border-radius: 50px;
@@ -33,7 +36,7 @@ html .cursor {
     opacity: 0;
 }
 .cursor::before {
-    background-color: #808080;
+    background-color: #7a7a7a;
   }
   .cursor.click::before {
     animation: click 1s ease forwards;

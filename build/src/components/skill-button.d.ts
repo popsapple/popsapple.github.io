@@ -13,6 +13,6 @@ declare const Items: {
     SVELTE: string;
     DOT2: string;
 };
-declare const SkillButton: (props: any) => React.JSX.Element;
-export { SkillButton, Items };
-//# sourceMappingURL=../../../src/components/skill-button.d.ts.map
+declare const IconButton: (props: any) => React.JSX.Element;
+export { IconButton, Items };
+//# sourceMappingURL=../../../src/components/icon-button.d.ts.map

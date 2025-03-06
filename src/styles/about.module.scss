@@ -1,22 +1,45 @@
 .about {
-    > li {
+    padding: 10px;
+    height: calc(80vh - 90px);
+    margin-top: 40px;
+    overflow-x: hidden;
+    overflow: scroll;
+    overflow-x: hidden;
+    @media screen and (min-width: 1280px) {
+        padding-left: 100px;
+    }
+    &::-webkit-scrollbar {
+        width: 34px;
+        background: white;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 20px;
+        background: rgb(191, 191, 191);
+        border: 13px solid white
+    }
+    > li:not(:last-child) {
         display: block;
-        h3 {
-          font-size: 50px;
-          margin-bottom: 35px;
-        }
-        margin-bottom: 50px;
+        margin-bottom: 80px;
+    }
+    > li:nth-child(2) {
+        margin-bottom: 40px;
     }
     .skill {
         display: block;
-    }
-    .history {
-        display: block;
+        li {
+            display: inline-block;
+            width: 30px;
+            margin-right: 25px;
+            button {
+                width: calc(122px / 2);
+                height: calc(116px / 2);
+            }
+        }
     }
     .profile {
         & > * { display: block;}
         p {
-            font-size: 20px;
+            font-size: 16px;
         }
         div {
             display: flex;
@@ -26,7 +49,35 @@
             > span, > a {
                 display: block;
                 text-align: left;
+                color: inherit;
+                padding-left: 25px;
+                margin: 20px 15px 0px 0px;
+                background: url('../assets/images/persion_icon.png') left center no-repeat;
             }
+            a {
+                background: url('../assets/images/mail_icon.png') 0px 7px no-repeat;
+                text-decoration: none;
+                &+a {
+                    padding-left: 20px;
+                    background: url('../assets/images/phone_icon.png') left center no-repeat;
+                }
+            }
+        }
+    }
+}
+.history {
+    li {
+        margin-bottom: 15px;
+        h4 {
+            color: #000000;
+            font-size:18px;
+        }
+        em {
+            font-size:16px;
+            font-style: normal;
+        }
+        p {
+            margin-top: 7px;
         }
     }
 }

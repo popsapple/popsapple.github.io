@@ -64,7 +64,7 @@ class Ring {
         this.vertexs.forEach((v, i) => {
             ctx.beginPath();
             ctx.arc(v.x, v.y, v.r, 0, Math.PI * 2, false);
-            ctx.fillStyle = '#808080';
+            ctx.fillStyle = '#7a7a7a';
             ctx.fill();
             ctx.closePath();
         });

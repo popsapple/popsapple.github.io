@@ -1,13 +1,13 @@
 import React from 'react';
 import * as style from '@styles/board.module.scss';
-import { Items } from '@components/skill-button';
+import { Items, ItemKeys } from '@components/icon-button';
 import About from '@components/about';
 import Works from '@components/works';
 import userImg from '../assets/images/user_big.png';
 import workImg from '../assets/images/user_big.png';
 
 type BoardType = {
-    type: keyof typeof Items,
+    type: ItemKeys,
     children?: React.ReactNode,
     onClose: () => void
 }

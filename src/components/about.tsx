@@ -1,7 +1,7 @@
 import React from 'react';
-import { Items, SkillButton } from './skill-button';
+import { Items, IconButton, ItemKeys } from './icon-button';
 import WorksList from '../ts/works';
-import style from '@styles/about.module.scss'
+import * as style from '@styles/about.module.scss'
 
 const History = () => {
     return <ul id="history" className={style.history}>
@@ -21,6 +21,13 @@ const HistoryItem = (props: WorkType<typeof WorksList>) => {
     </>
 }
 const About = () => {
+    const SKills = Object.keys(Items).map((item, index) => {
+        const dots = new RegExp(/(DOT\d)+|(STAR)+/).test(item)
+        if(dots) return ''
+        return <li key={item}>
+            <IconButton type={item as ItemKeys} onClick={(item)=> {}}/>
+        </li>
+    })
     return <ul id="about" className={style.about}>
             <li>
                 <h3>About Me</h3>
@@ -36,9 +43,7 @@ const About = () => {
             <li>
                 <h3>Skill</h3>
                 <ul id="skill" className={style.skill}>
-                    {Object.keys(Items).map((item, index) => <li key={item}>
-                        <SkillButton type={item} onClick={(item)=> {}}/>
-                    </li>)}
+                    {SKills}
                 </ul>
             </li>
             <li>

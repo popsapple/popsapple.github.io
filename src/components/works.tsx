@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Items, SkillButton } from './skill-button';
+import { Items, IconButton } from './icon-button';
 const Works = () => {
     return <></>
 }

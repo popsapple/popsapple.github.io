@@ -1,1 +1,1 @@
-{"version":3,"file":"skill-button.d.ts","sourceRoot":"./","sources":["src/components/skill-button.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,MAAM,OAAO,CAAC;AAG1B,QAAA,MAAM,KAAK;;;;;;;;;;;;;CAaV,CAAA;AACD,QAAA,MAAM,WAAW,mCAUhB,CAAA;AAED,OAAO,EAAE,WAAW,EAAE,KAAK,EAAE,CAAA"}
+{"version":3,"file":"icon-button.d.ts","sourceRoot":"./","sources":["src/components/icon-button.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,MAAM,OAAO,CAAC;AAG1B,QAAA,MAAM,KAAK;;;;;;;;;;;;;CAaV,CAAA;AACD,QAAA,MAAM,WAAW,mCAUhB,CAAA;AAED,OAAO,EAAE,WAAW,EAAE,KAAK,EAAE,CAAA"}
