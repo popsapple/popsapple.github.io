@@ -1,7 +1,7 @@
 import React from 'react';
-import { Items } from '@components/skill-button';
+import { ItemKeys } from '@components/icon-button';
 type BoardType = {
-    type: keyof typeof Items;
+    type: ItemKeys;
     children?: React.ReactNode;
     onClose: () => void;
 };
