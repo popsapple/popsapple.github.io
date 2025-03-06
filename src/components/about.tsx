@@ -1,11 +1,11 @@
 import React from 'react';
 import { Items, IconButton, ItemKeys } from './icon-button';
-import WorksList from '../ts/works';
+import { Histories } from '../ts/expriences';
 import * as style from '@styles/about.module.scss'
 
 const History = () => {
     return <ul id="history" className={style.history}>
-        {WorksList.map(w => {
+        {Histories.map(w => {
             return <li key={w.company}><HistoryItem {...w}/></li>
         })}
     </ul>
@@ -13,7 +13,7 @@ const History = () => {
 // infer은 성공적으로 추론 가능할 경우엔 그 추론한 결과를 반환한다.
 // 여기선 배열의 내부타입이 추론 가능했으니 그 결과를 T에 적용하는것.
 type WorkType<T> = T extends (infer U)[] ? U : never;
-const HistoryItem = (props: WorkType<typeof WorksList>) => {
+const HistoryItem = (props: WorkType<typeof Histories>) => {
     return <>
         <h4>{props.company}</h4>
         <em>{props.date}</em>

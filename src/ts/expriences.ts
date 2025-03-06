@@ -1,4 +1,4 @@
-const Works =  [
+export const Histories =  [
     {
         company: '비상교육',
         date: '2020.09 ~ 재직중',
@@ -35,4 +35,19 @@ const Works =  [
         explain: '(주)티컴즈 웹디자인, 자회사 쓰임 브랜드 홈페이지 제작 및 상세페이지 제작'
     }
 ]
-export default Works;
+export const Projects =  [
+    {
+        title: '비상교육',
+        date: '2020.09 ~ 재직중',
+        skills: 'REACT,JS,LIT,VUE',
+        account: 100,
+        explain: 'KLaSS , ELiF, MathAlive 컨텐츠 개발 및 유지보수, OxfordDiscover 컨텐츠 개발 총괄을 진행 하였으며, 2025년 서비스 예정인 AI 디지털 교과서 개발에 참여 하였습니다.'
+    },
+    {
+        title: '이노뎁',
+        date: '2019.11 ~ 2020.08',
+        skills: 'SASS,JS,ELECTRON',
+        account: 100,
+        explain: 'AngularJS를 이용한 타 플랫폼과의 연동'
+    }
+]
