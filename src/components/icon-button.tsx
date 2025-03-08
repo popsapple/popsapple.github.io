@@ -37,4 +37,20 @@ const IconButton = (props: {type: ItemKeys, children?: JSX.Element, onClick:(typ
     </button>
 }
 
-export { IconButton, Items }
+
+const Skills = (items?: Array<keyof typeof Items>) => {
+    if(!items) {
+        items = Object.keys(Items).map(i => i) as Array<keyof typeof Items>    
+    }
+    return items.map((item, index) => {
+        const dots = new RegExp(/(DOT\d)+|(STAR)+/).test(item)
+        if(!dots) {
+            return <li key={item}>
+            <IconButton type={item as ItemKeys} onClick={(item)=> {}}/>
+        </li>
+        }
+        return <></>
+    })
+}
+
+export { IconButton, Items, Skills }

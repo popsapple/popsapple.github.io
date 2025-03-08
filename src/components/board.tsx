@@ -4,7 +4,7 @@ import { Items, ItemKeys } from '@components/icon-button';
 import About from '@components/about';
 import Works from '@components/works';
 import userImg from '../assets/images/user_big.png';
-import workImg from '../assets/images/user_big.png';
+import workImg from '../assets/images/work_big.png';
 
 type BoardType = {
     type: ItemKeys,
@@ -22,7 +22,7 @@ const Contents = (props: { type: keyof typeof Items} ) => {
 }
 
 const Icons = (props: { type: keyof typeof Items} ) => {
-    return <div className={style.img}><img src={props.type == 'ABOUT' ? userImg: workImg}/></div>
+    return <div className={style.img + ' ' + props.type}><img src={props.type == 'ABOUT' ? userImg: workImg}/></div>
 }
 const Board = (props: BoardType) => {
     return <section className={style.section}>

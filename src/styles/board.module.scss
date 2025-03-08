@@ -1,9 +1,9 @@
 @keyframes cardup {
     0% {
-        transform: translate(-50%, -50%) scale(0.95) rotate(-5deg);
+        transform: translate(-50%, -50%) scale(0.95);
     }
     100% {
-        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+        transform: translate(-50%, -50%) scale(1);
     }
 }
 .section {
@@ -20,6 +20,7 @@
     text-align: left;
     animation: cardup 0.05s 0s ease-in-out forwards;
     color: #7a7a7a;
+
     @media screen and (min-width: 1280px){
         left: 55%;
     }
