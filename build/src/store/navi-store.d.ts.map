@@ -1,1 +1,1 @@
-{"version":3,"file":"navi-store.d.ts","sourceRoot":"./","sources":["src/store/navi-store.tsx"],"names":[],"mappings":"AACA,oBAAY,QAAQ;IAChB,IAAI,IAAA;IACJ,KAAK,IAAA;IACL,IAAI,IAAA;CACP;AACD,eAAO,MAAM,YAAY,sEAKtB,CAAC"}
+{"version":3,"file":"navi-store.d.ts","sourceRoot":"./","sources":["src/store/navi-store.tsx"],"names":[],"mappings":"AACA,oBAAY,QAAQ;IACnB,IAAI,IAAA;IACJ,KAAK,IAAA;IACL,IAAI,IAAA;CACJ;AACD,eAAO,MAAM,YAAY,sEAKtB,CAAC"}
