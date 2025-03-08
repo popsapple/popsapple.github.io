@@ -19,5 +19,6 @@ declare const IconButton: (props: {
     children?: JSX.Element;
     onClick: (type: ItemKeys) => void;
 }) => JSX.Element;
-export { IconButton, Items };
+declare const Skills: (items?: Array<keyof typeof Items>) => JSX.Element[];
+export { IconButton, Items, Skills };
 //# sourceMappingURL=../../../src/components/icon-button.d.ts.map
