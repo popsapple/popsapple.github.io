@@ -41,7 +41,7 @@ export const Histories = [
 ];
 export const Projects = [
 	{
-		title: 'AI 디지털교과서',
+		title: 'AI 디지털교과서1',
 		date: '2023.10 ~ 2024.10',
 		skills: 'JS,SASS,ROLLUP,LIT,VUE',
 		account: 100,
@@ -49,7 +49,7 @@ export const Projects = [
          <br /><br />또한, 컨텐츠 제작을 위한 CMS 설계에도 참여 하였고, 이를 통해 DB스키마 분석 후 일부 API의 설계 또한 진행 하였습니다.`,
 	},
 	{
-		title: 'AI 디지털교과서',
+		title: 'AI 디지털교과서2',
 		date: '2023.10 ~ 2024.10',
 		skills: 'JS,SASS,ROLLUP,LIT,VUE',
 		account: 100,
@@ -57,7 +57,7 @@ export const Projects = [
          <br /><br />또한, 컨텐츠 제작을 위한 CMS 설계에도 참여 하였고, 이를 통해 DB스키마 분석 후 일부 API의 설계 또한 진행 하였습니다.`,
 	},
 	{
-		title: 'AI 디지털교과서',
+		title: 'AI 디지털교과서3',
 		date: '2023.10 ~ 2024.10',
 		skills: 'JS,SASS,ROLLUP,LIT,VUE',
 		account: 100,
@@ -65,7 +65,7 @@ export const Projects = [
          <br /><br />또한, 컨텐츠 제작을 위한 CMS 설계에도 참여 하였고, 이를 통해 DB스키마 분석 후 일부 API의 설계 또한 진행 하였습니다.`,
 	},
 	{
-		title: 'AI 디지털교과서',
+		title: 'AI 디지털교과서4',
 		date: '2023.10 ~ 2024.10',
 		skills: 'JS,SASS,ROLLUP,LIT,VUE',
 		account: 100,

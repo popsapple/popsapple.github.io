@@ -1,33 +1,39 @@
-import React, { use } from 'react';
+import React, { use, useCallback, useEffect } from 'react';
 import * as style from '@styles/background.module.scss';
 import { Items, IconButton, ItemKeys } from '@components/icon-button';
 import Board from '@components/board';
 
-// promise를 전역으로 선언하여 fakeFetch 함수가 호출될 때마다 promise가 생성되는 것을 방지
-let promise: null | Promise<any> = null;
-let promise_state: 'pending' | 'fulfilled' | 'rejected' = 'pending';
-const fakeFetch: () => {
-	state: typeof promise_state;
-	promise: Promise<unknown>;
-} = () => {
-	if (promise == null) {
-		promise = new Promise<string>((resolve) =>
-			setTimeout(() => resolve('loaded'), 2000)
-		);
-		promise
-			.then(() => (promise_state = 'fulfilled'))
-			.catch(() => (promise_state = 'rejected'));
-	}
-	if (!promise) promise_state = 'pending';
-	return { state: promise_state, promise: promise };
-};
 const Background = (props) => {
+	const [loadingStatus, setLoadingStatus] = React.useState<{
+		state: string;
+		promise?: Promise<string>;
+	}>({ state: '' });
 	const [selectedSkill, setSelectedSkill] = React.useState<ItemKeys | null>(
 		null
 	);
-	const loading = fakeFetch();
+	const generatePromise = React.useCallback(() => {
+		if (loadingStatus.promise !== undefined) return;
+		let promise_state = 'pending';
+		const promise = new Promise<string>((resolve) =>
+			setTimeout(() => resolve('loaded'), 2000)
+		);
+		promise
+			.then(() => {
+				promise_state = 'fulfilled';
+				setLoadingStatus({ state: promise_state, promise: promise });
+			})
+			.catch(() => {
+				promise_state = 'reject';
+				setLoadingStatus({ state: promise_state, promise: promise });
+			});
+		setLoadingStatus({ state: promise_state, promise: promise });
+	}, [loadingStatus.promise]);
+	useEffect(() => {
+		generatePromise();
+	}, [loadingStatus.promise]);
 	// Promise를 상위 Suspense 컴포넌트에 던져줌
-	if (loading.state == 'pending') throw loading.promise;
+	if (loadingStatus && loadingStatus.state == 'pending')
+		throw loadingStatus.promise;
 	return (
 		<section
 			id='background'
