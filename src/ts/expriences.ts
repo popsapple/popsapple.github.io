@@ -113,6 +113,7 @@ export const Projects = [
 			<li>TypeScript: 프로젝트 안정성을 높이기 위해 사용</li>
 			<li>React: 동적 활동을 하는 컨텐츠 이기에 SPA 개발하는것과 같은 방식으로 제작 (Class)</li>
 			<li>Electron: 컨텐츠를 실행하는 실행기로써, 학급 입장 및 로그인 등의 역할 수행</li>
+			<li>Storybook: 각 컴포넌트의 사용설명서인 이것을 통해, 컴포넌트 재사용성 확보</li>
 			<li>Go: 컨텐츠 실행기 내에 들어간 로컬 서버로써, LMS 및 로컬 DB와의 연동, UDP 기반 소켓서버를 담당</li>
 		</ul>`,
 		link: 'https://www.youtube.com/watch?v=n9t0DW4NNzo',
