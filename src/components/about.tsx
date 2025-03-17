@@ -53,8 +53,16 @@ const About = () => {
 					>
 						<span itemProp='name'>Garam Hyeon</span>
 						<a
+							href='https://popsapple.tistory.com'
+							itemProp='homepage'
+							className={style.homepage}
+						>
+							https://popsapple.tistory.com
+						</a>
+						<a
 							href='mailto:saysun34@gmail.com'
 							itemProp='email'
+							className={style.mail}
 						>
 							saysun34@gmail.com
 						</a>

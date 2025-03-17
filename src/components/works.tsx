@@ -6,17 +6,25 @@ import * as style from '@styles/works.module.scss';
 
 type Project<T> = T extends (infer U)[] ? U : never;
 const Work = (prop: Project<typeof Projects> & { hidden: boolean }) => {
-	const skills = prop.skills.split(',') as unknown as Array<keyof typeof Items>;
 	return (
 		<li aria-hidden={prop.hidden}>
 			<h3 className={style.title}>{prop.title}</h3>
-			<p
-				className={style.explain}
-				dangerouslySetInnerHTML={{ __html: prop.explain }}
-			/>
-			<ul>{Skills(skills)}</ul>
 			<span className={style.date}>{prop.date}</span>
-			<span className={style.account}>{prop.account}</span>
+			{prop.link && <a href={prop.link}>LINK</a>}
+			<div>
+				<p
+					className={style.explain}
+					dangerouslySetInnerHTML={{ __html: prop.explain }}
+				/>
+				<div className={style.detail}>
+					<h4>사용기술</h4>
+					<div dangerouslySetInnerHTML={{ __html: prop.skills }} />
+				</div>
+				<div className={style.detail}>
+					<h4>기여내역</h4>
+					<div dangerouslySetInnerHTML={{ __html: prop.role }} />
+				</div>
+			</div>
 		</li>
 	);
 };
@@ -35,11 +43,11 @@ const Works = () => {
 			if (!li) return;
 			const scrollPosition = (li as HTMLLIElement).offsetWidth * idx;
 			sliderEle.current.scrollTo({
-				left: scrollPosition,
+				left: scrollPosition - 2,
 				behavior: 'smooth',
 			});
 			moving = false;
-		}, 100);
+		}, 500);
 	}, [focusIdx]);
 	React.useEffect(() => {
 		window.addEventListener('resize', Sliding);
@@ -71,18 +79,21 @@ const Works = () => {
 					let y = event.clientY;
 					if (event.pressure == 0) {
 						direction.current = '';
+						return;
 					} else {
 						direction.current = pointer.current.x > x ? 'R' : 'L';
 						distance = pointer.current.x - x;
-						distanceY = (pointer.current.y - y) * 1.5;
+						distanceY = pointer.current.y - y;
 						let toX = sliderEle.current.scrollLeft + distance;
 						let toY = sliderEle.current.scrollTop + distanceY;
-						if (Math.abs(distance) < 30) {
+						if (Math.abs(distance) < 50) {
 							direction.current = '';
-							sliderEle.current.scrollTo({
-								top: toY,
-								behavior: 'smooth',
-							});
+							sliderEle.current.children[focusIdx]
+								.querySelector('div')
+								.scrollTo({
+									top: toY,
+									behavior: 'smooth',
+								});
 						} else {
 							sliderEle.current.scrollTo({
 								left: toX,

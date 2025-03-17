@@ -1,20 +1,8 @@
-.project {
-	display: flex;
-	flex-direction: row;
-	justify-content: left;
-	align-items: safe center;
-	margin-left: 30px;
-	width: calc(100% - 55px);
-	height: calc(80vh - 90px);
-	margin-top: 40px;
+@mixin scrollbar() {
 	overflow: auto;
 	overflow-x: hidden;
 	touch-action: none;
 	overscroll-behavior: none;
-	@media screen and (min-width: 1280px) {
-		margin-left: 100px;
-		width: calc(100% - 140px);
-	}
 	&::-webkit-scrollbar {
 		width: 34px;
 		background: white;
@@ -24,6 +12,24 @@
 		background: rgb(191, 191, 191);
 		border: 13px solid white;
 	}
+}
+.project {
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+	align-items: safe center;
+	margin-left: 30px;
+	width: calc(100% - 55px);
+	height: calc(80vh - 115px);
+	margin-top: 40px;
+	touch-action: none;
+	overscroll-behavior: none;
+	user-select: none;
+	overflow-x: hidden;
+	@media screen and (min-width: 1280px) {
+		margin-left: 100px;
+		width: calc(100% - 140px);
+	}
 	> li {
 		display: block;
 		width: 100%;
@@ -31,36 +37,50 @@
 		flex-grow: 0;
 		flex-shrink: 0;
 		padding-right: 20px;
-		pointer-events: none;
-		user-select: none;
+		margin-right: 2px;
 		&:last-child {
 			padding-right: 0px;
+			margin-right: 0px;
 		}
 	}
-	p {
-		margin-bottom: 50px;
+	div {
+		max-height: calc(80vh - 200px);
+		@include scrollbar();
 	}
-	ul {
-		margin-bottom: 15px;
-		li {
-			display: inline-block;
-			button {
-				width: 50px !important;
-				height: 48px !important;
-			}
+}
+.skills {
+	margin-top: 40px;
+	li {
+		display: inline-block;
+		button {
+			width: 50px !important;
+			height: 48px !important;
 		}
 	}
 }
 .title {
 	display: block;
+	margin-bottom: 0px !important;
 }
 .explain {
 	display: block;
 }
 .date {
 	display: block;
-	background: url('../assets/images/calender_icon.png') 0px 3px no-repeat;
-	padding-left: 30px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	font-size: 14px;
+	vertical-align: middle;
+	& + a {
+		display: block;
+		margin-bottom: 20px;
+		margin-left: 0px;
+		padding-left: 20px;
+		background: url('../assets/images/link_icon.png') left center no-repeat;
+		background-size: 15px;
+		color: #7a7a7a;
+		font-size: 14px;
+	}
 }
 .account {
 	display: block;
@@ -97,5 +117,14 @@
 			width: 20px;
 			background: rgb(121, 135, 244);
 		}
+	}
+}
+.detail {
+	display: block;
+	margin-top: 20px;
+	h4 {
+		color: #000000;
+		font-size: 18px;
+		margin-bottom: 10px;
 	}
 }
